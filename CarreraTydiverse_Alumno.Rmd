@@ -250,7 +250,7 @@ cran3 <- cran3 %>%
 18. Usa `summarise` para determinar el valor medio del tamaño de las descargas realizadas en `cran` y almacenálo en la variable `avg_bytes`
 ```{r}
 avg_bytes <- cran %>%
-  summarise(avg_bytes = median(size))
+  summarise(avg_bytes = mean(size))
 
 
 ```
@@ -267,7 +267,7 @@ by_package <- cran %>%
 20. Usa la función `summarise` sobre  el elemento agrupado y calcula  el valor medio de la variable `size`. Observa el efecto del agrupamiento en el resultado.
 ```{r}
 by_package %>%
-  summarise( avgsize = median(size) )
+  summarise( avgsize = mean(size) )
 
 ```
 21. Para el agrupamiento creado calcula: 
@@ -281,28 +281,9 @@ elementos distintos,`n_distinct()` de la variables `ip_id y country`, y el
 la mediana (función `stats::median`) de la variable `size` y almacénalos en las variables `count, unique, countries y med_bytes` respectivamente. El resultado del sumario se almacenará en `pack_sum`.
 
 ```{r}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+by_package %>%
+  summarise("count" = n(), "unique" = n_distinct(ip_id), 
+            "countries" = n_distinct(country), avg_bytes = mean(size))
 
 
 
