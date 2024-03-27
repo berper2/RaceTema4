@@ -303,7 +303,7 @@ by_package %>%
 ```
 23. Repite el apartado anterior utilizando **pipes** para que finalmente el resultado se ordene, en orden descendente, según el número de descargas (`count`) y se almacene el la variable `top_counts_sorted`
 ```{r}
-
+#No he sabido hacer el 22
 
 
 
@@ -329,7 +329,8 @@ by_package %>%
 25. Completa lo que se indica  usando `pipes`. Selecciona las columnas `ip_id, country, package, size` de `cran` y muestra el resultado por pantalla usando `print`. No es necesario almacenar.
 
 ```{r}
-
+print(cran %>% 
+  select(ip_id, country, package, size))
 
 
 ```
