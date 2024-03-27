@@ -338,7 +338,9 @@ print(cran %>%
 26. Añade una columna llamada `size_mb` que contenga el tamaño de cada descarga en megabytes.
 
 ```{r}
-
+cran <- cran %>%
+  mutate( size_mb = size / 2^20)
+  
 
 
 ```
